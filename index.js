@@ -12,9 +12,7 @@ function gitRepoVersion(options) {
   let packageVersion  = require(path.join(projectPath, 'package.json')).version;
 
   let prefix;
-  if (info.tag && !(packageVersion && info.tag.includes(packageVersion))) {
-    prefix = info.tag;
-  } else if (packageVersion) {
+  if (packageVersion) {
     prefix = packageVersion;
   } else if (info.branch) {
     prefix = info.branch;
